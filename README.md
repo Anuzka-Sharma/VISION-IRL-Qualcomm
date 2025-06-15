@@ -1,5 +1,10 @@
 # Team Vision IRL - Real-Time Visual Assistant
-vISION IRL is a software that helps visually impaired people to detect their surrounding and make them more independent by object detction,voice outputs,depth estimation and faster processing on NPU
+VISION IRL is a software that helps visually impaired people to detect their surrounding and make them more independent by object detction,voice outputs,depth estimation and faster processing on NPU.
+
+# Demo Video
+Please find the attached working demo video at this link
+https://drive.google.com/file/d/1bQobFbd8DvbZDF8yxgi3RAKp73mLcX4y/view?usp=sharing
+
 
 ### 1️⃣ Technical Implementation  
 **NPU Acceleration**  
@@ -202,10 +207,6 @@ websockets==15.0.1
 
 3️⃣ Privacy
 On-Device Architecture:
-
-Demo Video
-
-
 
 No cloud dependencies
 
