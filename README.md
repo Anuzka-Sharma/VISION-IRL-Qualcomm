@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # VISION IRL
-=======
-=======
->>>>>>> 648f8905b368c0dfda6a4e4ac8b3d074198c8b36
-# VISION-IRL-Copy
+![image](https://github.com/user-attachments/assets/4a8f3359-7229-463a-a16e-fca07781dca6)
+
 
 ````markdown
 # 👁️‍🗨️ VISION IRL – Offline Assistive AI for the Visually Impaired
@@ -203,16 +199,3 @@ MIT License – free for non-commercial use with attribution.
 **Built for a world that everyone can experience. Offline. Real. Empowering. — VISION IRL**
 
 ```
-
----
-
-Let me know if you'd like to include:
-- A link to a sample `.onnx` → `.qnn` conversion script
-- Example logs of NPU-accelerated output
-- A badge-style intro for GitHub, or
-- A minimal version for submission to judges.
-```
-<<<<<<< HEAD
->>>>>>> 648f8905b368c0dfda6a4e4ac8b3d074198c8b36
-=======
->>>>>>> 648f8905b368c0dfda6a4e4ac8b3d074198c8b36
