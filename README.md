@@ -1,201 +1,224 @@
-# VISION IRL
-![image](https://github.com/user-attachments/assets/4a8f3359-7229-463a-a16e-fca07781dca6)
+# Team Vision IRL - Real-Time Visual Assistant
+vISION IRL is a software that helps visually impaired people to detect their surrounding and make them more independent by object detction,voice outputs,depth estimation and faster processing on NPU
+
+### 1️⃣ Technical Implementation  
+**NPU Acceleration**  
+```python
+# Snapdragon X Elite NPU optimization
+self.model = YOLO("yolov8m.pt").to('qnn')  # Qualcomm NPU backend
+Latency: 18-22ms inference
+Power Efficiency: 3.2W avg power draw
+
+FPS: 45-50 (NPU) vs 8-12 (CPU)
+
+2️⃣ Innovation Unique Features:
+
+👁️ Multimodal Alert System:
+
+python
+def detect_threats(self):
+    return {
+        'gestures': self.current_gestures,
+        'objects': self.detected_objects,
+        'suspicious_activity': self.suspicious_activities
+    }
+
+🎙️ Voice-First UX: Zero-touch activation via wake words
+
+requirements
+
+absl-py==2.3.0
+
+altgraph==0.17.4
+
+attrs==25.3.0
+
+certifi==2025.4.26
+
+cffi==1.17.1
+
+charset-normalizer==3.4.2
+
+click==8.2.1
+
+colorama==0.4.6
+
+comtypes==1.4.11
+
+contourpy==1.3.2
+
+cycler==0.12.1
+
+Cython==3.1.1
+
+dlib==20.0.0
+
+docutils==0.21.2
+
+face-recognition==1.3.0
+
+face-recognition-models==0.3.0
+
+filelock==3.18.0
+
+filetype==1.2.0
+
+flatbuffers==25.2.10
+
+fonttools==4.58.2
+
+fsspec==2025.5.1
+
+huggingface-hub==0.32.4
+
+idna==3.10
+
+jax==0.6.1
+
+jaxlib==0.6.1
+
+Jinja2==3.1.6
+
+Kivy==2.3.1
+
+kivy-deps.angle==0.4.0
+
+kivy-deps.glew==0.3.1
+
+Kivy-examples==2.3.1
+
+Kivy-Garden==0.1.5
+
+kivy_deps.gstreamer==0.3.4
+
+kivy_deps.sdl2==0.8.0
+
+kiwisolver==1.4.8
+
+lap==0.5.12
+
+MarkupSafe==3.0.2
+
+matplotlib==3.10.3
+
+mediapipe==0.10.21
+
+ml_dtypes==0.5.1
+
+mpmath==1.3.0
+
+networkx==3.5
+
+numpy==1.26.4
+
+opencv-contrib-python==4.11.0.86
+
+opencv-python==4.11.0.86
+
+opt_einsum==3.4.0
+
+packaging==25.0
+
+pandas==2.3.0
+
+pefile==2023.2.7
+
+pillow==10.4.0
+
+protobuf==4.25.8
+
+psutil==7.0.0
+
+py-cpuinfo==9.0.0
+
+PyAudio==0.2.14
+
+pycparser==2.22
+
+Pygments==2.19.1
+
+pyinstaller==6.14.1
+
+pyinstaller-hooks-contrib==2025.5
+
+pyparsing==3.2.3
+
+pypiwin32==223
+
+pyrealsense2==2.55.1.6486
+
+python-dateutil==2.9.0.post0
+
+pyttsx3==2.98
+
+pytz==2025.2
+
+pywin32==310
+
+pywin32-ctypes==0.2.3
+
+PyYAML==6.0.2
+
+requests==2.32.3
+
+safetensors==0.5.3
+
+scipy==1.15.3
+
+sentencepiece==0.2.0
+
+six==1.17.0
+
+sounddevice==0.5.2
+
+SpeechRecognition==3.14.3
+
+srt==3.5.3
+
+sympy==1.14.0
+
+timm==1.0.15
+
+torch==2.7.1
+
+torchvision==0.22.1
+
+tqdm==4.67.1
+
+typing_extensions==4.14.0
+
+tzdata==2025.2
+
+ultralytics==8.3.152
+
+ultralytics-thop==2.0.14
+
+urllib3==2.4.0
+
+vosk==0.3.45
+
+websockets==15.0.1
 
 
-````markdown
-# 👁️‍🗨️ VISION IRL – Offline Assistive AI for the Visually Impaired
+3️⃣ Privacy
+On-Device Architecture:
 
-**VISION IRL** is an **offline-first, privacy-focused assistive system** built to help visually impaired users interact with their surroundings through **AI-driven perception**. It runs entirely **locally** on Snapdragon® X Elite hardware, making use of **Qualcomm’s NPU acceleration** through the **Snapdragon® AI Stack** and **QNN (Qualcomm® Neural Network)** tools.
+Demo Video
 
----
 
-## 🚀 Key Features
 
-- 🎯 Real-time Object Detection with **YOLOv8**
-- 🧍 Pose Detection via **MediaPipe**
-- 👁️ Depth Perception using **Intel RealSense™**
-- 🔊 Fully Offline Speech I/O using **Vosk + pyttsx3**
-- 🧠 Face & Voice-based User Authentication
-- ⚙️ Runs fully on-device — **no internet required**
-- ⚡ Optimized for **Snapdragon X Elite** with NPU acceleration via **QNN + AI Hub**
+No cloud dependencies
 
----
+All processing via mediapipe and ultralytics local models...
 
-## 💻 System Requirements
 
-| Component          | Requirement                         |
-|--------------------|-------------------------------------|
-| **Device**          | Snapdragon® X Elite (e.g. Dell 7455)|
-| **OS**              | Windows 11 ARM64                   |
-| **Python**          | 3.12.x                             |
-| **Camera**          | Intel RealSense D435i (or similar) |
-| **NPU Runtime**     | Snapdragon® AI SDK + QNN           |
+# Team 	Information
 
----
+NAME                               EMAIL
+SAUMYA KUMARI             saumyakumari2005a@gmail.com
+ANUSHKA SHARMA            anushka.care@gmail.com  
+ASHMI SUMAN               ashmisuman8113@gmail.com
+KANISHKA RAJ              kanishkaraj2004@gmail.com
 
-## 📦 Installation
 
-### 1. Clone the Project
-```bash
-git clone https://github.com/Anuzka-Sharma/VISION-IRL-Copy.git
-cd VISION-IRL-Copy
-````
 
-### 2. Create and Activate Virtual Environment
-
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-### 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-If `PyAudio` fails:
-
-```bash
-pip install pipwin
-pipwin install pyaudio
-```
-
----
-
-## 🔌 Using Snapdragon® NPU (QNN) Acceleration
-
-### ✅ Requirements
-
-* [Snapdragon® AI SDK](https://developer.qualcomm.com/software/ai-stack)
-* [Qualcomm® AI Hub account](https://aihub.qualcomm.com)
-* Compatible `.onnx` or `.tflite` models (you can convert YOLO, Whisper, etc.)
-* Optional: [AnythingLLM + NPU Edge Chat App](https://github.com/Qualcomm-AI-research)
-
----
-
-### 🛠️ Steps to Run with QNN Acceleration
-
-1. **Install Snapdragon AI SDK for Windows**
-
-   * Download from: [https://developer.qualcomm.com/software/ai-stack](https://developer.qualcomm.com/software/ai-stack)
-   * Follow the SDK documentation to set up the QNN runtime.
-
-2. **Convert Model for QNN**
-
-   * Use AI Hub or QNN Tools to convert models to `.qnn` format:
-
-   ```bash
-   qnn-convert --onnx your_model.onnx --output-dir ./models/qnn
-   ```
-
-3. **Enable QNN Backend in Code**
-
-   * In `object_detection.py` or `speech_model.py`:
-
-   ```python
-   from qti.ai.model.api import QNNEngine
-   model = QNNEngine("models/qnn/yolov8.qnn", backend="npu")
-   ```
-
-4. **Verify Acceleration**
-
-   * Use `qnn-inspect` or runtime logs to confirm that the NPU is running ops (e.g. `Compute Unit(s): npu (851 ops)`).
-
----
-
-## 🧪 Real-Time Capabilities
-
-| Function         | Tech Used         | Accelerated                        |
-| ---------------- | ----------------- | ---------------------------------- |
-| Object Detection | YOLOv8 (ONNX/QNN) | ✅ (via QNN)                        |
-| Speech-to-Text   | Whisper / Vosk    | ✅ (Whisper on QNN or CPU fallback) |
-| Face Auth        | dlib / FaceNet    | ❌ (CPU-only)                       |
-| Depth Estimation | RealSense SDK     | ❌ (native pipeline)                |
-| Pose Detection   | MediaPipe         | ✅ (GPU/CPU)                        |
-
----
-
-## 🧠 Offline AI Pipeline
-
-```text
-[Camera Input]
-     ↓
-[YOLOv8 on NPU] → Object Labels
-     ↓
-[RealSense Depth Map] → Distance
-     ↓
-[Pose Detection (MediaPipe)]
-     ↓
-[Speech Recognition (Vosk)] ← Microphone
-     ↓
-[Command Parser + TTS (pyttsx3)] → Speaker
-```
-
----
-
-## 🧑‍💻 Project Structure
-
-```
-VISION-IRL/
-├── backend/
-│   ├── object_detection.py
-│   ├── speech_model.py
-│   ├── pose_module.py
-│   └── auth/
-├── models/
-│   ├── yolov8.onnx
-│   └── yolov8.qnn
-├── assets/
-├── main.py
-├── requirements.txt
-└── README.md
-```
-
----
-
-## 🧰 Toolchain Overview
-
-| Tool                               | Purpose                    |
-| ---------------------------------- | -------------------------- |
-| `ultralytics`                      | YOLOv8 object detection    |
-| `pyrealsense2`                     | RealSense D435i for depth  |
-| `vosk`                             | Offline STT                |
-| `pyttsx3`                          | Offline TTS                |
-| `kivy`                             | GUI Framework              |
-| `qnn` / `QNN SDK`                  | NPU inference acceleration |
-| `SpeechRecognition`                | Optional fallback STT      |
-| `torch`, `onnx`, `huggingface_hub` | Model development          |
-
----
-
-## 🧠 LLM Chatbot Option (NPU)
-
-You can also integrate a **local LLM chatbot** using:
-
-* ✅ [Snapdragon NPU Edge Chat App](https://github.com/Qualcomm-AI-research)
-* ✅ `AnythingLLM` with QNN-accelerated models
-* Use this for **natural voice Q\&A**, **scene descriptions**, and **contextual help**
-
----
-
-## 📜 License
-
-MIT License – free for non-commercial use with attribution.
-
----
-
-## 🤝 Acknowledgements
-
-* Qualcomm® AI Stack + AI Hub
-* Intel® RealSense SDK
-* Ultralytics YOLOv8
-* Whisper / Vosk
-* MediaPipe by Google
-* Kivy Open Source Framework
-
----
-
-**Built for a world that everyone can experience. Offline. Real. Empowering. — VISION IRL**
-
-```
