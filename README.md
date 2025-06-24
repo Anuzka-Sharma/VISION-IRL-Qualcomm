@@ -1,6 +1,3 @@
-Here’s a complete and polished version of your **GitHub README.md** file for the **VISION IRL** repository. This combines all your information into a clean, professional, and developer/judge-friendly format:
-
----
 
 # 👁️‍🗨️ VISION IRL – Real-Time Offline Visual Assistant for the Visually Impaired
 
@@ -218,13 +215,3 @@ Use Snapdragon® NPU Edge Chat App or AnythingLLM with QNN-compatible models to 
 
 **Empowering everyone to perceive the world – privately, offline, and in real time.**
 
----
-
-Let me know if you'd like:
-
-* A badge-style GitHub header
-* A `.qnn` conversion example script
-* Deployment guide for a .exe
-* Submission-ready condensed summary (for judges)
-
-Would you like this auto-converted into a Markdown file (`README.md`) or pushed to GitHub via command line instructions?
