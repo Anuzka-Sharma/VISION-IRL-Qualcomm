@@ -1,225 +1,230 @@
-# Team Vision IRL - Real-Time Visual Assistant
-VISION IRL is a software that helps visually impaired people to detect their surrounding and make them more independent by object detction,voice outputs,depth estimation and faster processing on NPU.
+Here’s a complete and polished version of your **GitHub README.md** file for the **VISION IRL** repository. This combines all your information into a clean, professional, and developer/judge-friendly format:
 
-# Demo Video
-Please find the attached working demo video at this link
-https://drive.google.com/file/d/1bQobFbd8DvbZDF8yxgi3RAKp73mLcX4y/view?usp=sharing
+---
 
+# 👁️‍🗨️ VISION IRL – Real-Time Offline Visual Assistant for the Visually Impaired
 
-### 1️⃣ Technical Implementation  
-**NPU Acceleration**  
+**VISION IRL** is a **real-time, privacy-focused assistive AI system** designed to empower visually impaired users by helping them understand and interact with their surroundings. It provides **offline object detection**, **voice interaction**, **gesture/threat detection**, and **depth estimation**, all running on-device with **Snapdragon® NPU acceleration**.
+
+🚀 **Demo Video**:
+[📹 Watch the Demo](https://drive.google.com/file/d/1bQobFbd8DvbZDF8yxgi3RAKp73mLcX4y/view?usp=sharing)
+
+---
+
+## 🔧 Technical Highlights
+
+### ✅ Snapdragon X Elite NPU Optimization
+
 ```python
-# Snapdragon X Elite NPU optimization
 self.model = YOLO("yolov8m.pt").to('qnn')  # Qualcomm NPU backend
-Latency: 18-22ms inference
-Power Efficiency: 3.2W avg power draw
+```
 
-FPS: 45-50 (NPU) vs 8-12 (CPU)
+* **Latency**: 18–22ms per frame
+* **FPS**: 45–50 (NPU) vs 8–12 (CPU)
+* **Power Draw**: \~3.2W average
 
-2️⃣ Innovation Unique Features:
+### 🧠 Key Capabilities
 
-👁️ Multimodal Alert System:
+* 🔍 **YOLOv8**-based object detection
+* 🧍‍♂️ Pose tracking using **MediaPipe**
+* 🎤 Offline voice interaction using **Vosk + pyttsx3**
+* 🎥 RealSense-based depth estimation
+* 🧑‍💼 Face & voice-based authentication
+* ⚡ Optimized for **Snapdragon AI Stack** (QNN runtime)
+* 🧭 Threat detection via multimodal inputs (gestures + objects)
 
-python
+---
+
+## 🌟 Unique Innovations
+
+### 👁️ Multimodal Threat Detection
+
+```python
 def detect_threats(self):
     return {
         'gestures': self.current_gestures,
         'objects': self.detected_objects,
         'suspicious_activity': self.suspicious_activities
     }
+```
 
-🎙️ Voice-First UX: Zero-touch activation via wake words
+Combines pose, gesture, and object tracking to detect suspicious behavior or obstacles.
 
-requirements
+### 🎙️ Voice-First UX
 
-absl-py==2.3.0
+* Wake-word-based zero-touch control
+* Runs fully offline for privacy
 
-altgraph==0.17.4
+---
 
-attrs==25.3.0
+## 🔒 Privacy-Preserving by Design
 
-certifi==2025.4.26
+* **No Cloud Needed** – All AI runs locally
+* **Offline Models** – YOLO, MediaPipe, Vosk, FaceNet
+* **User Data Stays On-Device**
 
-cffi==1.17.1
+---
 
-charset-normalizer==3.4.2
+## 💻 System Requirements
 
-click==8.2.1
+| Component       | Details                               |
+| --------------- | ------------------------------------- |
+| **Device**      | Snapdragon® X Elite (e.g., Dell 7455) |
+| **OS**          | Windows 11 ARM64                      |
+| **Python**      | 3.12.x                                |
+| **Camera**      | Intel® RealSense D435i (or similar)   |
+| **NPU Runtime** | Snapdragon® AI SDK + QNN Tools        |
 
-colorama==0.4.6
+---
 
-comtypes==1.4.11
+## 📦 Installation Guide
 
-contourpy==1.3.2
+### 1. Clone the Repo
 
-cycler==0.12.1
+```bash
+git clone https://github.com/Anuzka-Sharma/VISION-IRL-Copy.git
+cd VISION-IRL-Copy
+```
 
-Cython==3.1.1
+### 2. Create and Activate Virtual Environment
 
-dlib==20.0.0
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
 
-docutils==0.21.2
+### 3. Install Dependencies
 
-face-recognition==1.3.0
+```bash
+pip install -r requirements.txt
+```
 
-face-recognition-models==0.3.0
+If PyAudio fails:
 
-filelock==3.18.0
+```bash
+pip install pipwin
+pipwin install pyaudio
+```
 
-filetype==1.2.0
+---
 
-flatbuffers==25.2.10
+## ⚡ Running with QNN (NPU Acceleration)
 
-fonttools==4.58.2
+### Requirements
 
-fsspec==2025.5.1
+* Snapdragon® AI SDK: [https://developer.qualcomm.com/software/ai-stack](https://developer.qualcomm.com/software/ai-stack)
+* Qualcomm® AI Hub account
+* Converted ONNX/TFLite model
 
-huggingface-hub==0.32.4
+### Steps
 
-idna==3.10
+```bash
+qnn-convert --onnx yolov8.onnx --output-dir ./models/qnn
+```
 
-jax==0.6.1
+Enable QNN backend in code:
 
-jaxlib==0.6.1
+```python
+from qti.ai.model.api import QNNEngine
+model = QNNEngine("models/qnn/yolov8.qnn", backend="npu")
+```
 
-Jinja2==3.1.6
+Confirm QNN activity via logs:
 
-Kivy==2.3.1
+```
+Compute Unit(s): npu (851 ops)
+```
 
-kivy-deps.angle==0.4.0
+---
 
-kivy-deps.glew==0.3.1
+## 🔁 Real-Time Processing Pipeline
 
-Kivy-examples==2.3.1
+```plaintext
+[Camera Input]
+     ↓
+[YOLOv8 (QNN)] → Object Labels
+     ↓
+[RealSense] → Depth Map
+     ↓
+[MediaPipe] → Pose / Gesture
+     ↓
+[Vosk] ← Microphone Input
+     ↓
+[Command Logic + pyttsx3] → Voice Output
+```
 
-Kivy-Garden==0.1.5
+---
 
-kivy_deps.gstreamer==0.3.4
+## 🧩 Project Structure
 
-kivy_deps.sdl2==0.8.0
+```
+VISION-IRL/
+├── backend/
+│   ├── object_detection.py
+│   ├── speech_model.py
+│   ├── pose_module.py
+│   └── auth/
+├── models/
+│   ├── yolov8.onnx
+│   └── yolov8.qnn
+├── assets/
+├── main.py
+├── requirements.txt
+└── README.md
+```
 
-kiwisolver==1.4.8
+---
 
-lap==0.5.12
+## 📚 Toolchain & Libraries
 
-MarkupSafe==3.0.2
+| Tool/Library       | Purpose                   |
+| ------------------ | ------------------------- |
+| `ultralytics`      | YOLOv8 object detection   |
+| `pyrealsense2`     | Depth estimation          |
+| `vosk` + `pyttsx3` | Offline speech I/O        |
+| `MediaPipe`        | Pose and gesture tracking |
+| `dlib`             | Face recognition          |
+| `kivy`             | GUI frontend              |
+| `qnn`              | NPU inference backend     |
 
-matplotlib==3.10.3
+---
 
-mediapipe==0.10.21
+## 🧠 Optional LLM Integration
 
-ml_dtypes==0.5.1
+Use Snapdragon® NPU Edge Chat App or AnythingLLM with QNN-compatible models to enable:
 
-mpmath==1.3.0
+* Scene Q\&A
+* Natural language queries
+* Personal assistant-style interaction
 
-networkx==3.5
+---
 
-numpy==1.26.4
+## 📄 License
 
-opencv-contrib-python==4.11.0.86
+**MIT License** — Free for non-commercial use with attribution.
 
-opencv-python==4.11.0.86
+---
 
-opt_einsum==3.4.0
+## 🤝 Team VISION IRL
 
-packaging==25.0
+| Name           | Email                                                             |
+| -------------- | ----------------------------------------------------------------- |
+| Saumya Kumari  | [saumyakumari2005a@gmail.com](mailto:saumyakumari2005a@gmail.com) |
+| Anushka Sharma | [anushka.care@gmail.com](mailto:anushka.care@gmail.com)           |
+| Ashmi Suman    | [ashmisuman8113@gmail.com](mailto:ashmisuman8113@gmail.com)       |
+| Kanishka Raj   | [kanishkaraj2004@gmail.com](mailto:kanishkaraj2004@gmail.com)     |
 
-pandas==2.3.0
+---
 
-pefile==2023.2.7
+**Empowering everyone to perceive the world – privately, offline, and in real time.**
 
-pillow==10.4.0
+---
 
-protobuf==4.25.8
+Let me know if you'd like:
 
-psutil==7.0.0
+* A badge-style GitHub header
+* A `.qnn` conversion example script
+* Deployment guide for a .exe
+* Submission-ready condensed summary (for judges)
 
-py-cpuinfo==9.0.0
-
-PyAudio==0.2.14
-
-pycparser==2.22
-
-Pygments==2.19.1
-
-pyinstaller==6.14.1
-
-pyinstaller-hooks-contrib==2025.5
-
-pyparsing==3.2.3
-
-pypiwin32==223
-
-pyrealsense2==2.55.1.6486
-
-python-dateutil==2.9.0.post0
-
-pyttsx3==2.98
-
-pytz==2025.2
-
-pywin32==310
-
-pywin32-ctypes==0.2.3
-
-PyYAML==6.0.2
-
-requests==2.32.3
-
-safetensors==0.5.3
-
-scipy==1.15.3
-
-sentencepiece==0.2.0
-
-six==1.17.0
-
-sounddevice==0.5.2
-
-SpeechRecognition==3.14.3
-
-srt==3.5.3
-
-sympy==1.14.0
-
-timm==1.0.15
-
-torch==2.7.1
-
-torchvision==0.22.1
-
-tqdm==4.67.1
-
-typing_extensions==4.14.0
-
-tzdata==2025.2
-
-ultralytics==8.3.152
-
-ultralytics-thop==2.0.14
-
-urllib3==2.4.0
-
-vosk==0.3.45
-
-websockets==15.0.1
-
-
-3️⃣ Privacy
-On-Device Architecture:
-
-No cloud dependencies
-
-All processing via mediapipe and ultralytics local models...
-
-
-# Team 	Information
-
-NAME                               EMAIL
-SAUMYA KUMARI             saumyakumari2005a@gmail.com
-ANUSHKA SHARMA            anushka.care@gmail.com  
-ASHMI SUMAN               ashmisuman8113@gmail.com
-KANISHKA RAJ              kanishkaraj2004@gmail.com
-
-
-
+Would you like this auto-converted into a Markdown file (`README.md`) or pushed to GitHub via command line instructions?
